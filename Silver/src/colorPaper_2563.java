@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class colorPaper {
+public class colorPaper_2563 {
     public static void main(String[] args) {
 
         int [][] whitePaper = new int[100][100];
