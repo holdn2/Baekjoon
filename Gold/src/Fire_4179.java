@@ -53,6 +53,16 @@ public class Fire_4179 {
                 }
             }
         }
+
+        //불이 존재하지 않을 때 불의 닿을 수 있는 거리가 지훈이보다 무조건 크다고 가정.
+        //불이 없을 때 불의 거리가 초기화되지 않고 -1로 되어있기 때문에 impossible이 될 수 있음.
+        if(Q1.isEmpty()){
+            for(int i=0;i<n;i++){
+                for(int j=0;j<m;j++){
+                    dist1[i][j] = 1000000000;
+                }
+            }
+        }
         // 불에 대한 BFS
         while (!Q1.isEmpty()) {
             Pair cur = Q1.poll();
@@ -65,7 +75,6 @@ public class Fire_4179 {
                 Q1.offer(new Pair(nx, ny));
             }
         }
-
         // 지훈이에 대한 BFS
         while (!Q2.isEmpty()) {
             Pair cur = Q2.poll();
@@ -84,6 +93,7 @@ public class Fire_4179 {
                 Q2.offer(new Pair(nx, ny));
             }
         }
+
 
         System.out.println("IMPOSSIBLE");
     }
